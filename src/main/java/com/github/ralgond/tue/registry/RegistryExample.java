@@ -6,7 +6,6 @@ import com.twitter.util.registry.GlobalRegistry;
 import com.twitter.util.registry.Registry;
 
 import scala.collection.Iterator;
-
 /**
  * The registry is a hierarchical key/value store, where all keys are sequences
  * of Strings, and values are Strings.
@@ -22,11 +21,17 @@ public class RegistryExample {
 	    registry.put("foo", "bar", "baz");
 	    registry.put("foo", "qux");
 	    registry.put("baz");
+	    registry.put("foo", "bar1", "baz");
 	    
 	    Iterator<Entry> it = registry.iterator();
 	    while (it.hasNext()) {
 	    	Entry e = it.next();
 	    	System.out.println(e);
 	    }
+	    
+	    System.out.println(registry.count(e->true));
+	    
+	    System.out.println(registry.foldLeft("", (b,e)->{return b + e.value();}));
+	    
 	}
 }
