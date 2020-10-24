@@ -25,6 +25,12 @@
 			<artifactId>util-cache_2.13</artifactId>
 			<version>20.9.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twitter/util-registry -->
+		<dependency>
+			<groupId>com.twitter</groupId>
+			<artifactId>util-registry_2.13</artifactId>
+			<version>20.9.0</version>
+		</dependency>
 
 	</dependencies>
 
